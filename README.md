@@ -1,11 +1,10 @@
 # ![99](https://user-images.githubusercontent.com/49815957/99026121-4de23a00-2538-11eb-91b4-4e8fc302081e.jpg) Instacart2020
 Delivery iOS mobile app
 
-Unit 8: Group Milestone 
-===
+# Happy Rapid Cart
+Unit 8: Group Milestone README
 
 
-# TUNIN
 
 ## Table of Contents
 1. [Overview](#Overview)
@@ -14,66 +13,61 @@ Unit 8: Group Milestone
 
 ## Overview
 ### Description
-Tracks what music an individual listens to, and pairs them with others based on that music. Could be potentially used as a dating app, or just meeting new friends with similar music tastes.
+Aggregates grocery store options and matches user to a store they'd like to submit a grocery order to. 
 
 ### App Evaluation
-- **Category:** Social Networking / Music
-- **Mobile:** This app would be primarily developed for mobile but would perhaps be just as viable on a computer, such as tinder or other similar apps. Functionality wouldn't be limited to mobile devices, however mobile version could potentially have more features.
-- **Story:** Analyzes users music choices, and connects them to other users with similar choices. The user can then decide to message this person and befriend them if wanted.
-- **Market:** Any individual could choose to use this app, and to keep it a safe environment, people would be organized into age groups.
-- **Habit:** This app could be used as often or unoften as the user wanted depending on how deep their social life is, and what exactly they're looking for.
-- **Scope:** First we would start with pairing people based on music taste, then perhaps this could evolve into a music sharing application as well to broaden its usage. Large potential for use with spotify, apple music, or other music streaming applications.
+- **Category:** Shopping
+- **Mobile:** This app would be primarily developed for mobile.
+- **Story:** Allows user to specify choose a nearby grocery store to purchase items for quick delivery. Additionally, a user may pick a favorite item and see which stores have it. Once given that information, they can proceed to purchase from the store that has the specific item they need. This saves the user's time from having to click into each nearby store to see if they have the item.
+- **Market:** Users of all ages, but we'd specifically target primary grocery shoppers of the household.
+- **Habit:** This app would be used at the same freuency the user completes grocery shopping on a weekly, bi-weekly, or monthly cadence.
+- **Scope:** First we match users to their nearby stores. Then we allow the user to filter stores that have their favorite item.
 
 ## Product Spec
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
 
-* User logs in to access previous chats and preference settings
-* User picks what their favorite artist/genre/etc. (Think Spotify interface)
-* Matches have a chat window to get to know each other, with the ability to skip music and unmatch (Tinder Style).
-* Profile pages for each user
+* User opens the app 
+* User logs in to see previous grocery purchases and preferences; They hae an easy way to re-order
+* User 
+* User picks a favorite food they like. Then they are shown, in a subsequent screen, which stores have that time.
+* User selects a store to buy 
 * Settings (Accesibility, Notification, General, etc.)
 
 **Optional Nice-to-have Stories**
 
-* Log of past songs/people with album art covers matching
-* Page of most played songs (i.e. songs that most users are connecting through)
-* Profile Add-On: Top music choices, etc.
-* Optional Shuffle Button (i.e. random encounter/random song)
-* Listening/Encounter Queue
+* Log of past purchases
+* Log of past purchases by diet or food type
+* User taps recipe idea and those items are assembled in their cart from the nearest store
+* User messages with shopper while cart is being shopped for.
 
 ### 2. Screen Archetypes
 
-* Login 
-* Register - User signs up or logs into their account
-   * Upon Download/Reopening of the application, the user is prompted to log in to gain access to their profile information to be properly matched with another person. 
-   * ...
-* Messaging Screen - Chat for users to communicate (direct 1-on-1)
-   * Upon selecting music choice users matched and message screen opens
-* Profile Screen 
-   * Allows user to upload a photo and fill in information that is interesting to them and others
-* Song Selection Screen.
-   * Allows user to be able to choose their desired song, artist, genre of preference and begin listening and interacting with others.
-* Settings Screen
-   * Lets people change language, and app notification settings.
 
-### 3. Navigation
+* Stores list screen (Stream)
+     * Here the user can view a list of the nearby stores based on the user's location.
+     *  The use user can pick a store to shop from.
+     *   Each store cell will have a logo photo, store's name, and a description sentence.
+     *    The screen will be a table view of the stores.
+ 
+ 
+* Shopping Grid (Stream)
+   * The user can shop online products.
+   * The user can search product's by names or brands.
+   * Each product has a picture, name, and price.
+   * Flying products to the cart animation whenever the user add products.
+   * The screen is a collection view of product cells.
+
+### 3. Navigation (template still below)
 
 **Tab Navigation** (Tab to Screen)
 
-* Music selection
-* Profile
-* Settings
+* Tab a store to go to the shopping products screen
 
-Optional:
-* Music/Encounter Queue
-* Discover (Top Choices)
 
 **Flow Navigation** (Screen to Screen)
-* Forced Log-in -> Account creation if no log in is available
-* Music Selection (Or Queue if Optional) -> Jumps to Chat
-* Profile -> Text field to be modified. 
-* Settings -> Toggle settings
+* stores list -> shopping screen
+
 
 ## Wireframes
