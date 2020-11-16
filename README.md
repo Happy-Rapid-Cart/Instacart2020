@@ -13,6 +13,9 @@ Unit 8: Group Milestone README
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+1. [Models](#Models)
+1. [Networking](#Networking)
+
 
 ## Overview
 ### Description
@@ -33,10 +36,9 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 
 * User opens the app 
 * User logs in to see previous grocery purchases and preferences; They hae an easy way to re-order
-* User 
-* User picks a favorite food they like. Then they are shown, in a subsequent screen, which stores have that time.
 * User selects a store to buy 
-* Settings (Accesibility, Notification, General, etc.)
+* User adds food items to their cart
+* User can examine what's in their cart
 
 **Optional Nice-to-have Stories**
 
@@ -44,6 +46,7 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 * Log of past purchases by diet or food type
 * User taps recipe idea and those items are assembled in their cart from the nearest store
 * User messages with shopper while cart is being shopped for.
+* User picks a favorite food they like. Then they are shown, in a subsequent screen, which stores have that time.
 
 ### 2. Screen Archetypes
 
@@ -79,5 +82,93 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 
 ![Screen Shot 2020-11-13 at 8 22 21 PM](https://user-images.githubusercontent.com/49815957/99134944-fbfbeb80-25ed-11eb-9ef9-2fcb92a80dde.png)
 
+## Models
 
+* Authentication
+
+| Property  | Type  | Description  |
+|---|---|---|
+|  author |  Pointer to User |  image author |
+|  username |  String |  login username |
+|  password |  String |  login password |
+* Carts
+
+| Property  | Type  | Description  |
+|---|---|---|
+|  author |  Pointer to User |  image author |
+|  cart |  Arrays |  user cart for the shopping products |
+
+
+
+## Networking
+
+
+* List of network requests by screen
+ * Stores List Screen
+   * (Read/GET) Query all grocery stores where user is located
+    ```swift
+     import Foundation
+
+    let headers = [
+     "x-rapidapi-key": "424a32be03msha7607291c170bf5p1b1afejsnf0c2172df00d",
+     "x-rapidapi-host": "trueway-places.p.rapidapi.com"
+    ]
+
+    let request = NSMutableURLRequest(url: NSURL(string: "https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en")! as URL,
+                                            cachePolicy: .useProtocolCachePolicy,
+                                        timeoutInterval: 10.0)
+    request.httpMethod = "GET"
+    request.allHTTPHeaderFields = headers
+
+    let session = URLSession.shared
+    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+     if (error != nil) {
+      print(error)
+     } else {
+      let httpResponse = response as? HTTPURLResponse
+      print(httpResponse)
+     }
+    })
+
+    dataTask.resume()
+    ```
+    
+   
+ * Shopping Grid Screen
+   * (Read/GET) Query all grocery products based on the user input in the search bar
+   ```swift
+   import Foundation
+
+   let headers = [
+    "x-rapidapi-key": "424a32be03msha7607291c170bf5p1b1afejsnf0c2172df00d",
+    "x-rapidapi-host": "target1.p.rapidapi.com"
+   ]
+
+   let request = NSMutableURLRequest(url: NSURL(string: "https://target1.p.rapidapi.com/products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1")! as URL,
+                                           cachePolicy: .useProtocolCachePolicy,
+                                       timeoutInterval: 10.0)
+   request.httpMethod = "GET"
+   request.allHTTPHeaderFields = headers
+
+   let session = URLSession.shared
+   let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+    if (error != nil) {
+     print(error)
+    } else {
+     let httpResponse = response as? HTTPURLResponse
+     print(httpResponse)
+    }
+   })
+
+   dataTask.resume()
+   ```
+   
+   ### Existing API Endpoints
+   * Base URL - target1.p.rapidapi.com
+   * Base URL - trueway-places.p.rapidapi.com
+   
+| HTTP Verb  | Endpoint  | Description  |
+|---|---|---|
+|  GET | products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1 | get all products that include the dearch term |
+|  GET |  FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en | get all stoes based on the location  |
 
