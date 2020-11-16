@@ -3,18 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A91A64F2562210400FBA013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A64E2562210400FBA013 /* AppDelegate.swift */; };
 		0A91A6512562210400FBA013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A6502562210400FBA013 /* SceneDelegate.swift */; };
-		0A91A6532562210400FBA013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A6522562210400FBA013 /* ViewController.swift */; };
 		0A91A6562562210400FBA013 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A91A6542562210400FBA013 /* Main.storyboard */; };
 		0A91A6582562210A00FBA013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A91A6572562210A00FBA013 /* Assets.xcassets */; };
 		0A91A65B2562210A00FBA013 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A91A6592562210A00FBA013 /* LaunchScreen.storyboard */; };
 		0A91A6662562210B00FBA013 /* HappyRapidCartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A6652562210B00FBA013 /* HappyRapidCartTests.swift */; };
 		0A91A6712562210B00FBA013 /* HappyRapidCartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A6702562210B00FBA013 /* HappyRapidCartUITests.swift */; };
+		0A91A69725622CB600FBA013 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A69625622CB600FBA013 /* LoginViewController.swift */; };
+		0A91A69C25622CD800FBA013 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A69B25622CD800FBA013 /* StoreListViewController.swift */; };
 		74B30119C9320EC349B0F917 /* Pods_HappyRapidCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99E09D39F40EA82949B9FA /* Pods_HappyRapidCartTests.framework */; };
 		931FCC66E63181B512A976D6 /* Pods_HappyRapidCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66790612CAC81510F9815474 /* Pods_HappyRapidCart.framework */; };
 		FF0639DCD4B5912A961893DB /* Pods_HappyRapidCart_HappyRapidCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B632A3E84543A76C1CFAEA /* Pods_HappyRapidCart_HappyRapidCartUITests.framework */; };
@@ -41,7 +42,6 @@
 		0A91A64B2562210400FBA013 /* HappyRapidCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyRapidCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A91A64E2562210400FBA013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A91A6502562210400FBA013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0A91A6522562210400FBA013 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0A91A6552562210400FBA013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0A91A6572562210A00FBA013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0A91A65A2562210A00FBA013 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -52,6 +52,8 @@
 		0A91A66C2562210B00FBA013 /* HappyRapidCartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HappyRapidCartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A91A6702562210B00FBA013 /* HappyRapidCartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyRapidCartUITests.swift; sourceTree = "<group>"; };
 		0A91A6722562210B00FBA013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A91A69625622CB600FBA013 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0A91A69B25622CD800FBA013 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
 		50F5DB94F3EF250E23CA35B5 /* Pods-HappyRapidCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart.release.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart/Pods-HappyRapidCart.release.xcconfig"; sourceTree = "<group>"; };
 		5E99E09D39F40EA82949B9FA /* Pods_HappyRapidCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyRapidCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66790612CAC81510F9815474 /* Pods_HappyRapidCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyRapidCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,11 +120,12 @@
 			children = (
 				0A91A64E2562210400FBA013 /* AppDelegate.swift */,
 				0A91A6502562210400FBA013 /* SceneDelegate.swift */,
-				0A91A6522562210400FBA013 /* ViewController.swift */,
 				0A91A6542562210400FBA013 /* Main.storyboard */,
 				0A91A6572562210A00FBA013 /* Assets.xcassets */,
 				0A91A6592562210A00FBA013 /* LaunchScreen.storyboard */,
 				0A91A65C2562210A00FBA013 /* Info.plist */,
+				0A91A69625622CB600FBA013 /* LoginViewController.swift */,
+				0A91A69B25622CD800FBA013 /* StoreListViewController.swift */,
 			);
 			path = HappyRapidCart;
 			sourceTree = "<group>";
@@ -155,7 +158,6 @@
 				ECF24B1E4143837B37CC673A /* Pods-HappyRapidCartTests.debug.xcconfig */,
 				EA80A3A28E4EF2F80C3DE07D /* Pods-HappyRapidCartTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,7 +409,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A91A6532562210400FBA013 /* ViewController.swift in Sources */,
+				0A91A69C25622CD800FBA013 /* StoreListViewController.swift in Sources */,
+				0A91A69725622CB600FBA013 /* LoginViewController.swift in Sources */,
 				0A91A64F2562210400FBA013 /* AppDelegate.swift in Sources */,
 				0A91A6512562210400FBA013 /* SceneDelegate.swift in Sources */,
 			);
