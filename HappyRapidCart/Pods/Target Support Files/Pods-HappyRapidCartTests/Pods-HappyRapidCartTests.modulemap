@@ -1,0 +1,6 @@
+framework module Pods_HappyRapidCartTests {
+  umbrella header "Pods-HappyRapidCartTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
