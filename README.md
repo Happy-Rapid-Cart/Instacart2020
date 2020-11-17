@@ -33,10 +33,9 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 
 * User opens the app 
 * User logs in to see previous grocery purchases and preferences; They hae an easy way to re-order
-* User 
-* User picks a favorite food they like. Then they are shown, in a subsequent screen, which stores have that time.
 * User selects a store to buy 
-* Settings (Accesibility, Notification, General, etc.)
+* User adds food items to their cart
+* User can examine what's in their cart
 
 **Optional Nice-to-have Stories**
 
@@ -44,6 +43,7 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 * Log of past purchases by diet or food type
 * User taps recipe idea and those items are assembled in their cart from the nearest store
 * User messages with shopper while cart is being shopped for.
+* User picks a favorite food they like. Then they are shown, in a subsequent screen, which stores have that time.
 
 ### 2. Screen Archetypes
 
