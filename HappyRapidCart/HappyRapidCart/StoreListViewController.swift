@@ -16,6 +16,15 @@ class StoreListViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    /* NOTE: if we have LOGOUT functionality, we can use something like this
+     @IBAction func onLogout(_ sender: Any) {
+             //logout via the Parse API
+             self.dismiss(animated: true, completion: nil)
+             UserDefaults.standard.set(false, forKey: "userLoggedIn")
+         }
+     */
+    
 
     /*
     // MARK: - Navigation
