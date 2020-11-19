@@ -144,10 +144,8 @@ Aggregates grocery store options and matches user to a store they'd like to subm
    ### Existing API Endpoints
    * Base URL - target1.p.rapidapi.com
    
-   |HTTP Verb|Endpoint|Description|
-   ||products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1|get all products that include the dearch term|
+   |HTTP Verb|Endpoint|Description||products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1|get all products that include the dearch term|
 
 
    * Base URL - trueway-places.p.rapidapi.com
-   |HTTP Verb|Endpoint|Description|
-   ||FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en|get all stoes based on the location|
+   |HTTP Verb|Endpoint|Description|FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en|get all stoes based on the location|
