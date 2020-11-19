@@ -84,7 +84,7 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 * List of network requests by screen
  * Stores List Screen
    * (Read/GET) Query all grocery stores where user is located
-    ```
+    ```swift
      import Foundation
 
     let headers = [
@@ -114,5 +114,41 @@ Aggregates grocery store options and matches user to a store they'd like to subm
    
  * Shopping Grid Screen
    * (Read/GET) Query all grocery products based on the user input in the search bar
+   ```swift
+   import Foundation
+
+   let headers = [
+    "x-rapidapi-key": "424a32be03msha7607291c170bf5p1b1afejsnf0c2172df00d",
+    "x-rapidapi-host": "target1.p.rapidapi.com"
+   ]
+
+   let request = NSMutableURLRequest(url: NSURL(string: "https://target1.p.rapidapi.com/products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1")! as URL,
+                                           cachePolicy: .useProtocolCachePolicy,
+                                       timeoutInterval: 10.0)
+   request.httpMethod = "GET"
+   request.allHTTPHeaderFields = headers
+
+   let session = URLSession.shared
+   let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+    if (error != nil) {
+     print(error)
+    } else {
+     let httpResponse = response as? HTTPURLResponse
+     print(httpResponse)
+    }
+   })
+
+   dataTask.resume()
+   ```
    
+   ### Existing API Endpoints
+   * Base URL - target1.p.rapidapi.com
    
+   |HTTP Verb|Endpoint|Description|
+   ||products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1|get all products that include the dearch term|
+   ||||
+
+   * Base URL - trueway-places.p.rapidapi.com
+   |HTTP Verb|Endpoint|Description|
+   ||FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en|get all stoes based on the location|
+   ||||
