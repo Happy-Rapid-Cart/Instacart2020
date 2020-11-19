@@ -79,5 +79,40 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 
 ![Screen Shot 2020-11-13 at 8 22 21 PM](https://user-images.githubusercontent.com/49815957/99134944-fbfbeb80-25ed-11eb-9ef9-2fcb92a80dde.png)
 
+## Networking
 
+* List of network requests by screen
+ * Stores List Screen
+   * (Read/GET) Query all grocery stores where user is located
+    ```
+     import Foundation
 
+    let headers = [
+     "x-rapidapi-key": "424a32be03msha7607291c170bf5p1b1afejsnf0c2172df00d",
+     "x-rapidapi-host": "trueway-places.p.rapidapi.com"
+    ]
+
+    let request = NSMutableURLRequest(url: NSURL(string: "https://trueway-places.p.rapidapi.com/FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en")! as URL,
+                                            cachePolicy: .useProtocolCachePolicy,
+                                        timeoutInterval: 10.0)
+    request.httpMethod = "GET"
+    request.allHTTPHeaderFields = headers
+
+    let session = URLSession.shared
+    let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+     if (error != nil) {
+      print(error)
+     } else {
+      let httpResponse = response as? HTTPURLResponse
+      print(httpResponse)
+     }
+    })
+
+    dataTask.resume()
+    ```
+    
+   
+ * Shopping Grid Screen
+   * (Read/GET) Query all grocery products based on the user input in the search bar
+   
+   
