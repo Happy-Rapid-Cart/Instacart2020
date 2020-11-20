@@ -13,6 +13,9 @@ Unit 8: Group Milestone README
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
+1. [Models](#Models)
+1. [Networking](#Networking)
+
 
 ## Overview
 ### Description
@@ -79,7 +82,26 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 
 ![Screen Shot 2020-11-13 at 8 22 21 PM](https://user-images.githubusercontent.com/49815957/99134944-fbfbeb80-25ed-11eb-9ef9-2fcb92a80dde.png)
 
+## Models
+
+* Authentication
+
+| Property  | Type  | Description  |
+|---|---|---|
+|  author |  Pointer to User |  image author |
+|  username |  String |  login username |
+|  password |  String |  login password |
+* Carts
+
+| Property  | Type  | Description  |
+|---|---|---|
+|  author |  Pointer to User |  image author |
+|  cart |  Arrays |  user cart for the shopping products |
+
+
+
 ## Networking
+
 
 * List of network requests by screen
  * Stores List Screen
@@ -143,9 +165,10 @@ Aggregates grocery store options and matches user to a store they'd like to subm
    
    ### Existing API Endpoints
    * Base URL - target1.p.rapidapi.com
-   
-   |HTTP Verb|Endpoint|Description||products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1|get all products that include the dearch term|
-
-
    * Base URL - trueway-places.p.rapidapi.com
-   |HTTP Verb|Endpoint|Description|FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en|get all stoes based on the location|
+   
+| HTTP Verb  | Endpoint  | Description  |
+|---|---|---|
+|  GET | products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1 | get all products that include the dearch term |
+|  GET |  FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en | get all stoes based on the location  |
+
