@@ -15,9 +15,10 @@
 		0A91A6662562210B00FBA013 /* HappyRapidCartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A6652562210B00FBA013 /* HappyRapidCartTests.swift */; };
 		0A91A6712562210B00FBA013 /* HappyRapidCartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A6702562210B00FBA013 /* HappyRapidCartUITests.swift */; };
 		0A91A69725622CB600FBA013 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A69625622CB600FBA013 /* LoginViewController.swift */; };
-		0A91A69C25622CD800FBA013 /* StoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A69B25622CD800FBA013 /* StoreListViewController.swift */; };
 		74B30119C9320EC349B0F917 /* Pods_HappyRapidCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99E09D39F40EA82949B9FA /* Pods_HappyRapidCartTests.framework */; };
 		931FCC66E63181B512A976D6 /* Pods_HappyRapidCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66790612CAC81510F9815474 /* Pods_HappyRapidCart.framework */; };
+		C206AF3D2570317000721BF1 /* StroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206AF3C2570317000721BF1 /* StroesViewController.swift */; };
+		C25994E9257027B4008F35E6 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25994E8257027B4008F35E6 /* StoreCell.swift */; };
 		FF0639DCD4B5912A961893DB /* Pods_HappyRapidCart_HappyRapidCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B632A3E84543A76C1CFAEA /* Pods_HappyRapidCart_HappyRapidCartUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,12 +54,13 @@
 		0A91A6702562210B00FBA013 /* HappyRapidCartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HappyRapidCartUITests.swift; sourceTree = "<group>"; };
 		0A91A6722562210B00FBA013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A91A69625622CB600FBA013 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		0A91A69B25622CD800FBA013 /* StoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreListViewController.swift; sourceTree = "<group>"; };
 		50F5DB94F3EF250E23CA35B5 /* Pods-HappyRapidCart.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart.release.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart/Pods-HappyRapidCart.release.xcconfig"; sourceTree = "<group>"; };
 		5E99E09D39F40EA82949B9FA /* Pods_HappyRapidCartTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyRapidCartTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		66790612CAC81510F9815474 /* Pods_HappyRapidCart.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyRapidCart.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B0278527D82FB4CFE0CC416 /* Pods-HappyRapidCart-HappyRapidCartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart-HappyRapidCartUITests.debug.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart-HappyRapidCartUITests/Pods-HappyRapidCart-HappyRapidCartUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8B632A3E84543A76C1CFAEA /* Pods_HappyRapidCart_HappyRapidCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyRapidCart_HappyRapidCartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C206AF3C2570317000721BF1 /* StroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroesViewController.swift; sourceTree = "<group>"; };
+		C25994E8257027B4008F35E6 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		CF052C9E38E8A1C3D80F5107 /* Pods-HappyRapidCart-HappyRapidCartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart-HappyRapidCartUITests.release.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart-HappyRapidCartUITests/Pods-HappyRapidCart-HappyRapidCartUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E9D6752235EE300D2984A747 /* Pods-HappyRapidCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart.debug.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart/Pods-HappyRapidCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EA80A3A28E4EF2F80C3DE07D /* Pods-HappyRapidCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCartTests.release.xcconfig"; path = "Target Support Files/Pods-HappyRapidCartTests/Pods-HappyRapidCartTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,11 +123,12 @@
 				0A91A64E2562210400FBA013 /* AppDelegate.swift */,
 				0A91A6502562210400FBA013 /* SceneDelegate.swift */,
 				0A91A6542562210400FBA013 /* Main.storyboard */,
+				C25994E8257027B4008F35E6 /* StoreCell.swift */,
+				C206AF3C2570317000721BF1 /* StroesViewController.swift */,
 				0A91A6572562210A00FBA013 /* Assets.xcassets */,
 				0A91A6592562210A00FBA013 /* LaunchScreen.storyboard */,
 				0A91A65C2562210A00FBA013 /* Info.plist */,
 				0A91A69625622CB600FBA013 /* LoginViewController.swift */,
-				0A91A69B25622CD800FBA013 /* StoreListViewController.swift */,
 			);
 			path = HappyRapidCart;
 			sourceTree = "<group>";
@@ -409,7 +412,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A91A69C25622CD800FBA013 /* StoreListViewController.swift in Sources */,
+				C25994E9257027B4008F35E6 /* StoreCell.swift in Sources */,
+				C206AF3D2570317000721BF1 /* StroesViewController.swift in Sources */,
 				0A91A69725622CB600FBA013 /* LoginViewController.swift in Sources */,
 				0A91A64F2562210400FBA013 /* AppDelegate.swift in Sources */,
 				0A91A6512562210400FBA013 /* SceneDelegate.swift in Sources */,
