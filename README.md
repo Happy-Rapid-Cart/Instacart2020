@@ -15,6 +15,9 @@ Unit 8: Group Milestone README
 1. [Wireframes](#Wireframes)
 1. [Models](#Models)
 1. [Networking](#Networking)
+1. [Sprint 1 Milestone](#Sprint 1 Milestone)
+
+
 
 
 ## Overview
@@ -172,3 +175,11 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 |  GET | products/list?storeId=911&endecaId=5xtg6&sortBy=relevance&pageSize=20&searchTerm=apples&pageNumber=1 | get all products that include the dearch term |
 |  GET |  FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en | get all stoes based on the location  |
 
+## Sprint 1 Milestone
+
+1] the user can view a list of the nearby stores
+2] Each store should have a logo picture and a name
+3] change the table view cell to a card style
+4] The use user can pick a store and navigate to the shopping grid.
+
+https://recordit.co/qJgWmtO4rp.gif
