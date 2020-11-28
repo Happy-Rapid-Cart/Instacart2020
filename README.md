@@ -178,9 +178,9 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 # Milestones
 ### Sprint 1 Milestone
 
-1] the user can view a list of the nearby stores
-2] Each store should have a logo picture and a name
-3] change the table view cell to a card style
-4] The use user can pick a store and navigate to the shopping grid.
+* the user can view a list of the nearby stores
+* Each store should have a logo picture and a name
+* change the table view cell to a card style
+* The use user can pick a store and navigate to the shopping grid.
  <img src='https://recordit.co/qJgWmtO4rp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
 
