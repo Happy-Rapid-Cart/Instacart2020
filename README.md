@@ -176,7 +176,7 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 |  GET |  FindPlacesNearby?location=37.783366%2C-122.402325&type=cafe&radius=150&language=en | get all stoes based on the location  |
 
 # Milestones
-### Sprint 1 Milestone
+# Sprint 1 Milestone
 
 - [x] the user can view a list of the nearby stores
 - [x] Each store should have a logo picture and a name
@@ -185,5 +185,5 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 * Walkthrough Video
  <img src='https://recordit.co/qJgWmtO4rp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
  
- ### Sprint 2 Milestone
+ # Sprint 2 Milestone
 
