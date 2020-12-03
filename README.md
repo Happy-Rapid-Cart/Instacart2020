@@ -184,4 +184,6 @@ Aggregates grocery store options and matches user to a store they'd like to subm
 - [x] The use user can pick a store and navigate to the shopping grid.
 * Walkthrough Video
  <img src='https://recordit.co/qJgWmtO4rp.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
+ 
+ ### Sprint 2 Milestone
 
