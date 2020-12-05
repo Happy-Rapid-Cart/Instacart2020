@@ -84,6 +84,13 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         // configure cell shape
         cell.productImage.layer.cornerRadius = 8
         cell.cellView.layer.cornerRadius = 8
+        
+        // shadow
+        cell.cellView.layer.shadowColor = UIColor.black.cgColor
+        cell.cellView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.cellView.layer.shadowOpacity = 0.7
+        cell.cellView.layer.shadowRadius = 4.0
+        
         return cell
 
     }
