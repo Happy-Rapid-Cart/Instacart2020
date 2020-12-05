@@ -191,7 +191,7 @@ Aggregates grocery store options and matches user to a store they'd like to subm
  - [x] API calls for the products
  - [x] Search Bar to search products and update the collection view with the new API call
  * Walkthrough Video
- <img src='https://https://recordit.co/kWPeMkgBzN.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
+ <img src='https://recordit.co/kWPeMkgBzN.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
  
  
 
