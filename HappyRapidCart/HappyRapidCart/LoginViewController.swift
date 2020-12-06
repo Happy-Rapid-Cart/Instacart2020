@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
             // when the pane shows up
             // we want to check if the user default is set for the UserLoggedIn key
             if UserDefaults.standard.bool(forKey: "userLoggedIn") == true {
-                //self.performSegue(withIdentifier: "loginToHome", sender: self)
                 self.performSegue(withIdentifier: "loginSegue", sender: self)
             }
         }
