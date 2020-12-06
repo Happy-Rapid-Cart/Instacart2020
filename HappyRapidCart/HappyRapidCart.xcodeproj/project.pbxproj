@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A7D6C13257C952C0083A407 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6C12257C952B0083A407 /* CartViewController.swift */; };
+		0A7D6C18257C98490083A407 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6C17257C98490083A407 /* CartCell.swift */; };
 		0A91A64F2562210400FBA013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A64E2562210400FBA013 /* AppDelegate.swift */; };
 		0A91A6512562210400FBA013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A6502562210400FBA013 /* SceneDelegate.swift */; };
 		0A91A6562562210400FBA013 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A91A6542562210400FBA013 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A7D6C12257C952B0083A407 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		0A7D6C17257C98490083A407 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		0A91A64B2562210400FBA013 /* HappyRapidCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyRapidCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A91A64E2562210400FBA013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A91A6502562210400FBA013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,8 @@
 				0A91A6592562210A00FBA013 /* LaunchScreen.storyboard */,
 				0A91A65C2562210A00FBA013 /* Info.plist */,
 				0A91A69625622CB600FBA013 /* LoginViewController.swift */,
+				0A7D6C12257C952B0083A407 /* CartViewController.swift */,
+				0A7D6C17257C98490083A407 /* CartCell.swift */,
 			);
 			path = HappyRapidCart;
 			sourceTree = "<group>";
@@ -422,12 +428,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C25994E9257027B4008F35E6 /* StoreCell.swift in Sources */,
+				0A7D6C18257C98490083A407 /* CartCell.swift in Sources */,
 				C2811C5D257B09F100F93266 /* ShoppingGridViewController.swift in Sources */,
 				C2811C58257B08D800F93266 /* ShoppingGridCell.swift in Sources */,
 				C206AF3D2570317000721BF1 /* StroesViewController.swift in Sources */,
 				C2AFB432257B50D100514A2C /* SearchBarView.swift in Sources */,
 				0A91A69725622CB600FBA013 /* LoginViewController.swift in Sources */,
 				0A91A64F2562210400FBA013 /* AppDelegate.swift in Sources */,
+				0A7D6C13257C952C0083A407 /* CartViewController.swift in Sources */,
 				0A91A6512562210400FBA013 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
