@@ -136,16 +136,24 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
 
             let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
             let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-                if (error != nil) {
-                    print(error)
+                if let error = error{
+                    print(error.localizedDescription)
+                    //self.products = []
                     //have no cells shown
                     // instead show a label saying "No items found"
                 } else if let data = data {
-                    let httpResponse = response as? HTTPURLResponse
+                    //let httpResponse = response as? HTTPURLResponse
                     //print(httpResponse)
                     let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                     //print(dataDictionary)
-                    self.products = dataDictionary["products"] as! [[String : Any]]
+                    if dataDictionary["products"] != nil {
+                        self.products = dataDictionary["products"] as! [[String : Any]]
+                        
+                    }
+                    else {
+                        self.products = []
+                        
+                    }
                     self.collectionView.reloadData()
                     
                     //print(self.products)
