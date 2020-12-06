@@ -23,10 +23,12 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
 
         // modify layout
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumLineSpacing = 4
-        layout.minimumInteritemSpacing = 4
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        
         
         let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        //let width = view.frame.size.width / 2
         layout.itemSize =   CGSize(width: width, height: width * 3/2)
         
         
@@ -71,15 +73,27 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         
         let product = self.products[indexPath.item]
         let title = product["title"] as! String
+        
+        let range = title.range(of: "-")
+        
+        let finalTitle = title.substring(to: range!.lowerBound)
+        var size = title.substring(from: range!.upperBound)
+        
+        if size.contains("-"){
+            let rangeSize = size.range(of: "-")
+            size = size.substring(to: rangeSize!.lowerBound)
+        }
+        
         let priceDic = product["price"] as! [String: Any]
         let price = priceDic["formatted_current_price"] as! String
         let imageDic = product["images"] as! [String: Any]
         let imageURLString = imageDic["primaryUri"] as! String
         let imageURL = URL(string: imageURLString)
         
-        cell.productLabel.text = title
+        cell.productLabel.text = finalTitle
         cell.priceLabel.text = price
         cell.productImage.af_setImage(withURL: imageURL!)
+        cell.productSizer.text = size
 
         // configure cell shape
         cell.productImage.layer.cornerRadius = 8
@@ -97,6 +111,7 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     // layout function
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let height = view.frame.size.height
@@ -104,6 +119,7 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         // in case you you want the cell to be 40% of your controllers view
         return CGSize(width: width * 0.4, height: height * 0.4)
     }
+ 
 
 
     // search bar functions
