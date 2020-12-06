@@ -31,7 +31,7 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
-                print(error)
+                print(error!)
             } else if let data = data {
                  let httpResponse = response as? HTTPURLResponse
                  //print(httpResponse)
@@ -57,13 +57,17 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let name = supermarket["name"] as! String
         
         cell.storeLabel.text = name
-        cell.storeImage.image = UIImage(named: "store")
+        
+        let size = CGSize(width: 148, height: 100)
+        let scaledImage = UIImage(named: "store")?.af_imageScaled(to: size)
+        
+        cell.storeImage.image = scaledImage
         
         // check for store names
-        let storeNames = ["Walmart", "ALDI", "Publix", "Whole Foods"]
+        let storeNames = ["Walmart", "ALDI", "Publix", "Whole Foods", "Family Dollar", "Jumbo", "Garden Marketplace", "Mi Gente", "Oriental Market", "Oriental Supermarket"]
         for store in storeNames{
             if name.contains(store) {
-                cell.storeImage.image = UIImage(named: store)
+                cell.storeImage.image = UIImage(named: store)?.af_imageScaled(to: size)
             }
         }
         
@@ -76,7 +80,7 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-            return 100
+            return 120
     }
     
     /*

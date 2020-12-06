@@ -138,6 +138,8 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
             let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
                 if (error != nil) {
                     print(error)
+                    //have no cells shown
+                    // instead show a label saying "No items found"
                 } else if let data = data {
                     let httpResponse = response as? HTTPURLResponse
                     //print(httpResponse)
