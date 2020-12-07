@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol ProductCellDelegate {
+    func productClicked(_ tag: Int)
+}
+
 class ShoppingGridCell: UICollectionViewCell {
+    var delegate: ProductCellDelegate?
     
     @IBOutlet weak var cellView: UIView!
     
@@ -16,4 +21,12 @@ class ShoppingGridCell: UICollectionViewCell {
     
     @IBOutlet weak var productSizer: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    
+    @IBOutlet weak var addButton: UIButton!
+    
+    @IBAction func addCartButtonAction(_ sender: UIButton) {
+        print("clicked")
+        self.delegate?.productClicked(sender.tag)
+    }
 }
