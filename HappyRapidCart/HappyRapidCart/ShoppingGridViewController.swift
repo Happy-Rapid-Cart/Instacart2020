@@ -8,12 +8,71 @@
 import UIKit
 import Foundation
 import AlamofireImage
+import Parse
 
-class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
+class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, ProductCellDelegate {
+    
+    func productClicked(_ tag: Int) {
+        
+        print("we begin")
+   
+        //performSegue(withIdentifier: "viewProfile", sender: self)
+        let product = self.products[tag]
+        let title = product["title"] as! String
+        
+        let range = title.range(of: "-")
+        
+        var finalTitle = title.substring(to: range!.lowerBound)
+        
+        if finalTitle.contains("&#38;"){
+            let rangeTitle = finalTitle.range(of: "&#38;")
+            finalTitle = finalTitle.substring(to: rangeTitle!.lowerBound)
+        }
+        
+        
+        var size = title.substring(from: range!.upperBound)
+        
+        if size.contains("-"){
+            let rangeSize = size.range(of: "-")
+            size = size.substring(to: rangeSize!.lowerBound)
+        }
+        
+        let priceDic = product["price"] as! [String: Any]
+        let price = priceDic["formatted_current_price"] as! String
+        let imageDic = product["images"] as! [String: Any]
+        let imageURLString = imageDic["primaryUri"] as! String
+        
+        
+        
+        let imageData = NSData.init(contentsOf: NSURL(string: imageURLString) as! URL)
+        let picture = PFFileObject(name: "product.png", data: imageData! as Data)
+        
+        let cart = PFObject(className: "Cart")
+        cart["user_id"] = PFUser.current()!
+        cart["product_name"] = finalTitle
+        cart["product_image"] = picture
+        cart["product_size"] = size
+        cart["price"] = price
+        cart["product_quantity"] = 1
+        
+        cart.saveInBackground { (success, error) in
+            if success {
+                print("saved!")
+                
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+        
+    
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     var products = [[String:Any]]()
+    //var productsToBuy = [[String:Any]]()
     var searchBarVariable = "apples"
+    var clickedProduct: IndexPath? = nil
     
     
     override func viewDidLoad() {
@@ -62,14 +121,53 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         dataTask.resume()
         
     }
+    /*
+    @IBAction func add(_ sender: Any) {
+        
+        // save to table
+        // row to have user, product, qualtity
+        
+        let cart = PFObject(className: "Cart")
+        cart["user_id"] = PFUser.current()!
+        cart["product_name"] = 0
+        cart["product_image."] = 0
+        cart["product_size"] = 0
+        
+        cart.saveInBackground { (success, error) in
+            if success {
+                print("saved!")
+                
+            } else {
+                print(error?.localizedDescription)
+            }
+        }
+    }
+    */
     
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
     }
     
+    
+    /*
+    @IBAction func addProductToCartArr(_ sender: Any) {
+        print("add item")
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)
+        let product = self.products[indexPath!.item]
+        self.productsToBuy.append(product)
+    }
+ */
+    
+    
+    
+ 
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShoppingGridCell", for: indexPath) as! ShoppingGridCell
+        cell.delegate = self
+        cell.addButton.tag = indexPath.item
+        
         
         let product = self.products[indexPath.item]
         let title = product["title"] as! String
@@ -199,14 +297,20 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     
-    /*
+    
     // MARK: - Navigation
-
+    /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        print("Loading up cart view")
+        let cartViewController = segue.destination as! CartViewController
+        cartViewController.products = self.productsToBuy
     }
-    */
+ */
+    
+    
 
 }
