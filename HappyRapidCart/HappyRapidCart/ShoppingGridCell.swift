@@ -14,5 +14,6 @@ class ShoppingGridCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productLabel: UILabel!
     
+    @IBOutlet weak var productSizer: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
 }
