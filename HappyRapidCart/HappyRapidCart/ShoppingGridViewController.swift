@@ -27,9 +27,9 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         layout.minimumInteritemSpacing = 8
         
         
-        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 3
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 2
         //let width = view.frame.size.width / 2
-        layout.itemSize =   CGSize(width: width, height: width * 3/2)
+        layout.itemSize =   CGSize(width: width, height: width)
         
         
         // network call for the products
@@ -99,11 +99,19 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         cell.productImage.layer.cornerRadius = 8
         cell.cellView.layer.cornerRadius = 8
         
+        cell.contentView.layer.borderWidth = 1
+        
         // shadow
-        cell.cellView.layer.shadowColor = UIColor.black.cgColor
-        cell.cellView.layer.shadowOffset = CGSize(width: 3, height: 3)
-        cell.cellView.layer.shadowOpacity = 0.7
-        cell.cellView.layer.shadowRadius = 4.0
+        cell.contentView.layer.borderColor = UIColor.clear.cgColor
+        cell.layer.shadowColor = UIColor.black.cgColor
+        
+        cell.layer.shadowOffset = CGSize(width: 3, height: 3)
+        cell.layer.shadowOpacity = 0.7
+        cell.layer.shadowRadius = 4.0
+       
+        cell.contentView.layer.masksToBounds = true
+        cell.layer.masksToBounds = false
+       // cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, byRoundingCorners: cell.contentView.layer.cornerRadius).cgPath
         
         return cell
 
@@ -111,7 +119,7 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     // layout function
-    
+    /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
         let height = view.frame.size.height
@@ -119,7 +127,7 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         // in case you you want the cell to be 40% of your controllers view
         return CGSize(width: width * 0.4, height: height * 0.4)
     }
- 
+    */
 
 
     // search bar functions
