@@ -12,6 +12,8 @@ import Parse
 
 class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, ProductCellDelegate {
     
+    
+    
     func productClicked(_ tag: Int) {
         
         print("we begin")
@@ -63,12 +65,29 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
                 print(error!.localizedDescription)
             }
         }
+        
+        // animation part
+        
+        /*
+        let buttonPosition : CGPoint = sender.convert(sender.bounds.origin, to: self.tableViewProduct)
+        let indexPath = self.tableViewProduct.indexPathForRow(at: buttonPosition)!
+        let cell = collectionView.cellForRow(at: indexPath) as! ShoppingGridCell
+        let imageViewPosition : CGPoint = cell.imageViewProduct.convert(cell.imageViewProduct.bounds.origin, to: self.view)
+        let imgViewTemp = UIImageView(frame: CGRect(x: imageViewPosition.x, y: imageViewPosition.y, width: cell.imageViewProduct.frame.size.width, height: cell.imageViewProduct.frame.size.height))
+        
+        imgViewTemp.image = cell.imageViewProduct.image
+        
+        animation(tempView: imgViewTemp)
+         */
     }
         
-    
-    
-    
+
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    var cartImage: UIImage!
+    var lableNoOfCartItem: UILabel!
+    var counterItem = 0
+    
     var products = [[String:Any]]()
     //var productsToBuy = [[String:Any]]()
     var searchBarVariable = "apples"
@@ -238,11 +257,17 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     // search bar functions
    
     func collectionView(_ collectionView: UICollectionView,viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView{
-    let searchView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchBar", for: indexPath)
+    let searchView: UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SearchBar", for: indexPath) as! SearchBarView
+        
+        // shape of cart counter label in the header seaction
+    
+        searchView.lableNoOfCartItem.layer.cornerRadius = lableNoOfCartItem.frame.size.height / 2
+        searchView.lableNoOfCartItem.clipsToBounds = true
+        
 
-    return searchView
-     
+        return searchView
     }
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     
@@ -298,6 +323,43 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     
     
+    // animatim function
+    /*
+    func animation(tempView : UIView)  {
+        self.view.addSubview(tempView)
+        UIView.animate(withDuration: 1.0,
+                       animations: {
+                        tempView.animationZoom(scaleX: 1.5, y: 1.5)
+        }, completion: { _ in
+            
+            UIView.animate(withDuration: 0.5, animations: {
+                
+                tempView.animationZoom(scaleX: 0.2, y: 0.2)
+                tempView.animationRoted(angle: CGFloat(Double.pi))
+                
+                tempView.frame.origin.x = self.buttonCart.frame.origin.x
+                tempView.frame.origin.y = self.buttonCart.frame.origin.y
+                
+            }, completion: { _ in
+                
+                tempView.removeFromSuperview()
+                
+                UIView.animate(withDuration: 1.0, animations: {
+                    
+                    self.counterItem += 1
+                    self.lableNoOfCartItem.text = "\(self.counterItem)"
+                    self.buttonCart.animationZoom(scaleX: 1.4, y: 1.4)
+                }, completion: {_ in
+                    self.buttonCart.animationZoom(scaleX: 1.0, y: 1.0)
+                })
+                
+            })
+            
+        })
+    }
+ 
+ */
+    
     // MARK: - Navigation
     /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -313,4 +375,17 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     
 
+}
+
+
+
+// extension for the animation
+extension UIView{
+    func animationZoom(scaleX: CGFloat, y: CGFloat) {
+        self.transform = CGAffineTransform(scaleX: scaleX, y: y)
+    }
+    
+    func animationRoted(angle : CGFloat) {
+        self.transform = self.transform.rotated(by: angle)
+    }
 }

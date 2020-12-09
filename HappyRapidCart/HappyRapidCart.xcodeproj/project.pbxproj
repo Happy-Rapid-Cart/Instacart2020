@@ -112,7 +112,6 @@
 			children = (
 				0A91A64D2562210400FBA013 /* HappyRapidCart */,
 				0A91A6642562210B00FBA013 /* HappyRapidCartTests */,
-				0A91A66F2562210B00FBA013 /* HappyRapidCartUITests */,
 				0A91A64C2562210400FBA013 /* Products */,
 				99C8624EE36488EB6DD9A920 /* Pods */,
 				DCAC66D95EF17462DD692B7D /* Frameworks */,
@@ -172,6 +171,7 @@
 		99C8624EE36488EB6DD9A920 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				0A91A66F2562210B00FBA013 /* HappyRapidCartUITests */,
 				E9D6752235EE300D2984A747 /* Pods-HappyRapidCart.debug.xcconfig */,
 				50F5DB94F3EF250E23CA35B5 /* Pods-HappyRapidCart.release.xcconfig */,
 				6B0278527D82FB4CFE0CC416 /* Pods-HappyRapidCart-HappyRapidCartUITests.debug.xcconfig */,
