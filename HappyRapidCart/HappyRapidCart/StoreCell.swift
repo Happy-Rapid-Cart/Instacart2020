@@ -17,10 +17,10 @@ class StoreCell: UITableViewCell {
     @IBOutlet weak var storeLabel: UILabel!
     
     
-    var s: Supermarkets! {
+    var s: Supermarket! {
             didSet {
                 storeLabel.text = s.name
-                storeImage = s.image
+                storeImage.image = s.image
             }
         }
     

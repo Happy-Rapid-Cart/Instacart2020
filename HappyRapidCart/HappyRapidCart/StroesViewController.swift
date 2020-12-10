@@ -44,8 +44,17 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                  let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                  //print(dataDictionary)
                  let results = dataDictionary["results"] as! [[String : Any]]
-                self.supermarkets = results
-                self.filteredSuperMarkets = results
+                
+                var supes: [Supermarket] = []
+
+                for dictionary in results {
+                    let superM = Supermarket.init(dict: dictionary)
+                    supes.append(superM)
+                }
+                
+                
+                self.supermarkets = supes
+                self.filteredSuperMarkets = supes
                 
                  self.tableView.reloadData()
 
@@ -92,7 +101,10 @@ extension StroesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText != "" {
             filteredSuperMarkets = supermarkets.filter{(s: Supermarket) -> Bool in
-                return s.name.lowercased().contains(searchText.lowercased())
+                //do any of the words in this array exist in this string
+                let arr = ["Whole Foods Market", "ALDI"]
+                return arr.contains(where: s.name.contains)
+                //return s.name.lowercased().contains(searchText.lowercased())
             }
         }
         else {
