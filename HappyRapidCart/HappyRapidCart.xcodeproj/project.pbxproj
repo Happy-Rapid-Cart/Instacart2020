@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A077A20257DF42D0045B09B /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A077A1F257DF42D0045B09B /* Cart.swift */; };
+		0A1E6FCC2581EF5100BDD62E /* Supermarket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E6FCB2581EF5100BDD62E /* Supermarket.swift */; };
 		0A7D6C13257C952C0083A407 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6C12257C952B0083A407 /* CartViewController.swift */; };
 		0A7D6C18257C98490083A407 /* CartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A7D6C17257C98490083A407 /* CartCell.swift */; };
 		0A91A64F2562210400FBA013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A91A64E2562210400FBA013 /* AppDelegate.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		0A077A1F257DF42D0045B09B /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
+		0A1E6FCB2581EF5100BDD62E /* Supermarket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Supermarket.swift; sourceTree = "<group>"; };
 		0A7D6C12257C952B0083A407 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		0A7D6C17257C98490083A407 /* CartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCell.swift; sourceTree = "<group>"; };
 		0A91A64B2562210400FBA013 /* HappyRapidCart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyRapidCart.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 				0A91A69625622CB600FBA013 /* LoginViewController.swift */,
 				0A7D6C12257C952B0083A407 /* CartViewController.swift */,
 				0A7D6C17257C98490083A407 /* CartCell.swift */,
+				0A1E6FCB2581EF5100BDD62E /* Supermarket.swift */,
 			);
 			path = HappyRapidCart;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				0A91A64F2562210400FBA013 /* AppDelegate.swift in Sources */,
 				0A7D6C13257C952C0083A407 /* CartViewController.swift in Sources */,
 				0A91A6512562210400FBA013 /* SceneDelegate.swift in Sources */,
+				0A1E6FCC2581EF5100BDD62E /* Supermarket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

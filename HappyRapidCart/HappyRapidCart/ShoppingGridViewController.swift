@@ -273,7 +273,6 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
     
-    
         if (searchBar.text!.isEmpty) {
             print("search bar text is empty")
 
