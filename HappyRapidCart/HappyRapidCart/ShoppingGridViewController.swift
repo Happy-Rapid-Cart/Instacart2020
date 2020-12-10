@@ -94,15 +94,20 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         
         let range = title.range(of: "-")
         
-        var finalTitle = title.substring(to: range!.lowerBound)
+        var finalTitle = title
+        if title.contains("-"){
+           finalTitle = title.substring(to: range!.lowerBound)
+        }
         
         if finalTitle.contains("&#38;"){
             let rangeTitle = finalTitle.range(of: "&#38;")
             finalTitle = finalTitle.substring(to: rangeTitle!.lowerBound)
         }
         
-        
-        var size = title.substring(from: range!.upperBound)
+        var size  = ""
+        if title.contains("-"){
+            size = title.substring(from: range!.upperBound)
+        }
         
         if size.contains("-"){
             let rangeSize = size.range(of: "-")
