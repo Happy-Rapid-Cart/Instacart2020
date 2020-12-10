@@ -12,6 +12,76 @@ import Parse
 
 class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, ProductCellDelegate {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var cartImage: UIImage!
+    var lableNoOfCartItem: UILabel!
+    var counterItem = 0
+    
+    var products = [[String:Any]]()
+    //var productsToBuy = [[String:Any]]()
+    var searchBarVariable = "cereal"
+    var clickedProduct: IndexPath? = nil
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+
+        // modify layout
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
+        
+        
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 2
+        //let width = view.frame.size.width / 2
+        layout.itemSize =   CGSize(width: width, height: width)
+        
+        
+        // network call for the products
+        let headers = [
+            "x-rapidapi-host": "target1.p.rapidapi.com",
+            "x-rapidapi-key": "424a32be03msha7607291c170bf5p1b1afejsnf0c2172df00d"
+        ]
+        
+        let request = NSMutableURLRequest(url: NSURL(string: "https://target1.p.rapidapi.com/products/list?sortBy=relevance&pageSize=20&searchTerm=\(searchBarVariable)&pageNumber=3&storeId=911&endecaId=5xtg6")! as URL, cachePolicy: .useProtocolCachePolicy,timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+
+        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+            
+            if let error = error{
+                print(error.localizedDescription)
+                //self.products = []
+                //have no cells shown
+                // instead show a label saying "No items found"
+            } else if let data = data {
+                let httpResponse = response as? HTTPURLResponse
+                print(httpResponse?.statusCode)
+                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                print(dataDictionary)
+                if dataDictionary["products"] != nil {
+                    self.products = dataDictionary["products"] as! [[String : Any]]
+                    
+                }
+                else {
+                    self.products = []
+                    
+                }
+                self.collectionView.reloadData()
+                
+                //print(self.products)
+
+            }
+
+        })
+
+        dataTask.resume()
+        
+    }
     
     
     func productClicked(_ tag: Int) {
@@ -49,6 +119,10 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         let imageData = NSData.init(contentsOf: NSURL(string: imageURLString) as! URL)
         let picture = PFFileObject(name: "product.png", data: imageData! as Data)
         
+        //query
+        
+        
+        // Add new entry if not found
         let cart = PFObject(className: "Cart")
         cart["user_id"] = PFUser.current()!
         cart["product_name"] = finalTitle
@@ -80,88 +154,6 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         animation(tempView: imgViewTemp)
          */
     }
-        
-
-    @IBOutlet weak var collectionView: UICollectionView!
-    
-    var cartImage: UIImage!
-    var lableNoOfCartItem: UILabel!
-    var counterItem = 0
-    
-    var products = [[String:Any]]()
-    //var productsToBuy = [[String:Any]]()
-    var searchBarVariable = "apples"
-    var clickedProduct: IndexPath? = nil
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-
-        // modify layout
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumLineSpacing = 8
-        layout.minimumInteritemSpacing = 8
-        
-        
-        let width = (view.frame.size.width - layout.minimumInteritemSpacing * 2) / 2
-        //let width = view.frame.size.width / 2
-        layout.itemSize =   CGSize(width: width, height: width)
-        
-        
-        // network call for the products
-        let headers = [
-            "x-rapidapi-host": "target1.p.rapidapi.com",
-            "x-rapidapi-key": "424a32be03msha7607291c170bf5p1b1afejsnf0c2172df00d"
-        ]
-        
-        let request = NSMutableURLRequest(url: NSURL(string: "https://target1.p.rapidapi.com/products/list?sortBy=relevance&pageSize=20&searchTerm=\(searchBarVariable)&pageNumber=3&storeId=911&endecaId=5xtg6")! as URL, cachePolicy: .useProtocolCachePolicy,timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-
-        let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
-        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-            if (error != nil) {
-                print(error)
-            } else if let data = data {
-                let httpResponse = response as? HTTPURLResponse
-                //print(httpResponse)
-                let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
-                //print(dataDictionary)
-                self.products = dataDictionary["products"] as! [[String : Any]]
-                self.collectionView.reloadData()
-                
-                //print(self.products)
-
-            }
-        })
-
-        dataTask.resume()
-        
-    }
-    /*
-    @IBAction func add(_ sender: Any) {
-        
-        // save to table
-        // row to have user, product, qualtity
-        
-        let cart = PFObject(className: "Cart")
-        cart["user_id"] = PFUser.current()!
-        cart["product_name"] = 0
-        cart["product_image."] = 0
-        cart["product_size"] = 0
-        
-        cart.saveInBackground { (success, error) in
-            if success {
-                print("saved!")
-                
-            } else {
-                print(error?.localizedDescription)
-            }
-        }
-    }
-    */
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return products.count
@@ -193,15 +185,20 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         
         let range = title.range(of: "-")
         
-        var finalTitle = title.substring(to: range!.lowerBound)
+        var finalTitle = title
+        if title.contains("-"){
+           finalTitle = title.substring(to: range!.lowerBound)
+        }
         
         if finalTitle.contains("&#38;"){
             let rangeTitle = finalTitle.range(of: "&#38;")
             finalTitle = finalTitle.substring(to: rangeTitle!.lowerBound)
         }
         
-        
-        var size = title.substring(from: range!.upperBound)
+        var size  = ""
+        if title.contains("-"){
+            size = title.substring(from: range!.upperBound)
+        }
         
         if size.contains("-"){
             let rangeSize = size.range(of: "-")
@@ -261,8 +258,8 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         
         // shape of cart counter label in the header seaction
     
-        searchView.lableNoOfCartItem.layer.cornerRadius = lableNoOfCartItem.frame.size.height / 2
-        searchView.lableNoOfCartItem.clipsToBounds = true
+        //searchView.lableNoOfCartItem.layer.cornerRadius = lableNoOfCartItem.frame.size.height / 2
+        //searchView.lableNoOfCartItem.clipsToBounds = true
         
 
         return searchView
