@@ -8,16 +8,22 @@
 import UIKit
 import Foundation
 
-class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     @IBOutlet weak var tableView: UITableView!
     
-    var supermarkets = [[String:Any]]()
+    var supermarkets: [Supermarket] = []
+    var searchBarVariable = "cereal"
+    
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var filteredSuperMarkets: [Supermarket] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        searchBar.delegate = self
 
         let headers = [
             "x-rapidapi-host": "trueway-places.p.rapidapi.com",
@@ -37,7 +43,18 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                  //print(httpResponse)
                  let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
                  //print(dataDictionary)
-                 self.supermarkets = dataDictionary["results"] as! [[String : Any]]
+                 let results = dataDictionary["results"] as! [[String : Any]]
+                
+                var supes: [Supermarket] = []
+
+                for dictionary in results {
+                    let superM = Supermarket.init(dict: dictionary)
+                    supes.append(superM)
+                }
+                
+                
+                self.supermarkets = supes
+                self.filteredSuperMarkets = supes
                 
                  self.tableView.reloadData()
 
@@ -48,32 +65,15 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return supermarkets.count
+        return filteredSuperMarkets.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StoreCell") as! StoreCell
-        let supermarket = self.supermarkets[indexPath.row]
-        let name = supermarket["name"] as! String
+        let supermarket = self.filteredSuperMarkets[indexPath.row]
         
-        cell.storeLabel.text = name
         
-        let size = CGSize(width: 148, height: 100)
-        let scaledImage = UIImage(named: "store")?.af_imageScaled(to: size)
-        
-        cell.storeImage.image = scaledImage
-        
-        // check for store names
-        let storeNames = ["Walmart", "ALDI", "Publix", "Whole Foods", "Family Dollar", "Jumbo", "Garden Marketplace", "Mi Gente", "Oriental Market", "Oriental Supermarket"]
-        for store in storeNames{
-            if name.contains(store) {
-                cell.storeImage.image = UIImage(named: store)?.af_imageScaled(to: size)
-            }
-        }
-        
-        // configure cell shape
-        cell.storeView.layer.cornerRadius = 8
-        cell.storeImage.layer.cornerRadius = 8
+        cell.s = supermarket
         
         
         return cell
@@ -82,6 +82,7 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 120
     }
+  
     
     /*
     // MARK: - Navigation
@@ -93,4 +94,35 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     */
 
+}
+
+extension StroesViewController: UISearchBarDelegate {
+
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+            filteredSuperMarkets = supermarkets.filter{(s: Supermarket) -> Bool in
+                //do any of the words in this array exist in this string
+                let arr = ["Whole Foods Market", "ALDI"]
+                return arr.contains(where: s.name.contains)
+                //return s.name.lowercased().contains(searchText.lowercased())
+            }
+        }
+        else {
+            filteredSuperMarkets = supermarkets
+        }
+        tableView.reloadData()
+    }
+
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.searchBar.showsCancelButton = true
+    }
+
+    // when search bar cancel button is clicked
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.text = ""
+        searchBar.resignFirstResponder() //remove keyboard
+        filteredSuperMarkets = supermarkets
+        tableView.reloadData()
+    }
 }

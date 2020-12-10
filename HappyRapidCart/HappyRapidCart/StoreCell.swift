@@ -16,6 +16,14 @@ class StoreCell: UITableViewCell {
     
     @IBOutlet weak var storeLabel: UILabel!
     
+    
+    var s: Supermarket! {
+            didSet {
+                storeLabel.text = s.name
+                storeImage.image = s.image
+            }
+        }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
