@@ -64,6 +64,12 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         dataTask.resume()
     }
     
+    @IBAction func onLogout(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        UserDefaults.standard.set(false, forKey: "userLoggedIn")
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredSuperMarkets.count
     }

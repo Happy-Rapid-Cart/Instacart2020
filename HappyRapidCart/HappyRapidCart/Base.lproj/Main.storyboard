@@ -210,7 +210,14 @@
                         <viewLayoutGuide key="safeArea" id="9iv-Xj-8DD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Stores Near You" id="ic4-5E-baf"/>
+                    <navigationItem key="navigationItem" title="Stores Near You" id="ic4-5E-baf">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="LqU-1M-Uv9">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="onLogout:" destination="Gus-ik-UMc" id="ki4-V7-dXH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="962-e3-tXk" id="Rse-DN-O7O"/>
                         <outlet property="tableView" destination="f3Q-Hn-o8T" id="MM0-E8-dBk"/>
@@ -484,6 +491,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dcg-A9-Obg">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.24092093110000001" green="0.69675141569999999" blue="0.1041586474" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
