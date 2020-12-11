@@ -1,10 +1,29 @@
-# ![cart](https://user-images.githubusercontent.com/49815957/99154934-a07b3d80-2681-11eb-9d2c-c64aa2152f46.jpg)
- Instacart2020
-Delivery iOS mobile app
+# Happy Rapid Cart - Delivery iOS mobile app
+![cart](https://user-images.githubusercontent.com/49815957/99154934-a07b3d80-2681-11eb-9d2c-c64aa2152f46.jpg =250x250)
+
 
 ![Build](https://github.com/Happy-Rapid-Cart/Instacart2020/workflows/Build/badge.svg?)
 
-# Happy Rapid Cart
+# Demo Walkthrough
+
+### Log in
+![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/login2.gif)
+Our app first has the user sign up or login. Their credentials are saved via an API call to our Parse cloud database.
+Additionally, we use local persistence to preserve the session so the user remains logged in even if they close the app. 
+
+
+### Find Stores & Add Products to Cart to Purchase
+![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/find_store_purchase2.gif)
+The user can see stores within a 10 mile radius of them and then choose a store. They'll proceed to pick items and add them to their cart.  Both the REAL stores and REAL products shown come from 2 separate, external API calls that populate all the information on the screen. None of this is hardcoded.  
+
+
+### Find stores that carry the recipe you need
+![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/personalization2.gif)
+Lastly, we help the user narrow down the number of stores by a certain recipe they are looking for. This help guarantee that the user can quickly find the items they need. Lasly, this helps prevent user churn, which could occur because a user has to manually keep checking stores that don't have the items they need. 
+
+___________
+
+# Group Milestones & Background on the product
 Unit 8: Group Milestone README
 
 
