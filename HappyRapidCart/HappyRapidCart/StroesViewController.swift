@@ -13,7 +13,7 @@ class StroesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var tableView: UITableView!
     
     var supermarkets: [Supermarket] = []
-    var searchBarVariable = "spinach"
+    var searchBarVariable = "oranges"
     
     @IBOutlet weak var searchBar: UISearchBar!
     

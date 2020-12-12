@@ -24,7 +24,7 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     var products = [[String:Any]]()
     //var productsToBuy = [[String:Any]]()
-    var searchBarVariable = "spinach"
+    var searchBarVariable = "jam"
     var clickedProduct: IndexPath? = nil
     
     
