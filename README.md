@@ -22,7 +22,7 @@ The user can see stores within a 10 mile radius of them and then choose a store.
 
 
 ### Find stores that carry the recipe you need
-![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/personalization_final2.gif)
+![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/personalize_slowly.gif)
 
 Lastly, we help the user narrow down the number of stores by a certain recipe they are looking for. This help guarantee that the user can quickly find the items they need. Lastly, this helps prevent user churn, which could occur because a user has to manually keep checking stores that don't have the items they need. 
 
