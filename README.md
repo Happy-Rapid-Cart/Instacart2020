@@ -6,7 +6,7 @@
 
 
 
-# Demo Walkthrough
+# App Walkthrough
 
 ### Log in
 ![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/login2.gif)
