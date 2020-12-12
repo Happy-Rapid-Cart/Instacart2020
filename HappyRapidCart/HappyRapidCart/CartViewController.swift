@@ -73,13 +73,14 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        //let arr = [1, 2]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cartTableCell") as! CartCell
         let product = products[indexPath.row]
         
         
         cell.productTitleLabel.text = product["product_name"] as? String
         cell.priceLabel.text = product["price"] as? String
-        cell.quantityTextField.text = product["product_quantity"] as? String
+        cell.quantityLabel.text = "1"
         cell.productSizeLabel.text = product["product_size"] as? String
         
         let imageFile = product["product_image"] as! PFFileObject
