@@ -223,5 +223,6 @@ Aggregates grocery store options and matches user to a store they'd like to subm
  - [x] Parse stores the user's produts
  - [x] Polish the UI
   * Walkthrough Video
+  
  ![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/find_store_purchase2.gif)
 
