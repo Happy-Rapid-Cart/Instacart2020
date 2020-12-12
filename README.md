@@ -16,13 +16,13 @@ Additionally, we use local persistence to preserve the session so the user remai
 
 
 ### Find Stores & Add Products to Cart to Purchase
-![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/shop_final.gif)
+![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/shop_final_2.gif)
 
 The user can see stores within a 10 mile radius of them and then choose a store. They'll proceed to pick items and add them to their cart.  Both the REAL stores and REAL products shown come from 2 separate, external API calls that populate all the information on the screen. None of this is hardcoded.  
 
 
 ### Find stores that carry the recipe you need
-![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/personalization_final.gif)
+![](https://github.com/Happy-Rapid-Cart/Instacart2020/blob/main/gif_walkthroughs/personalization_final2.gif)
 
 Lastly, we help the user narrow down the number of stores by a certain recipe they are looking for. This help guarantee that the user can quickly find the items they need. Lastly, this helps prevent user churn, which could occur because a user has to manually keep checking stores that don't have the items they need. 
 
