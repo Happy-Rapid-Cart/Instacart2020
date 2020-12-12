@@ -26,6 +26,7 @@
 		C2811C58257B08D800F93266 /* ShoppingGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2811C57257B08D800F93266 /* ShoppingGridCell.swift */; };
 		C2811C5D257B09F100F93266 /* ShoppingGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2811C5C257B09F100F93266 /* ShoppingGridViewController.swift */; };
 		C2AFB432257B50D100514A2C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AFB431257B50D000514A2C /* SearchBarView.swift */; };
+		C2DA723025850DFA003894AB /* shopping.json in Resources */ = {isa = PBXBuildFile; fileRef = C2DA722F25850DFA003894AB /* shopping.json */; };
 		FF0639DCD4B5912A961893DB /* Pods_HappyRapidCart_HappyRapidCartUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B632A3E84543A76C1CFAEA /* Pods_HappyRapidCart_HappyRapidCartUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		C2811C57257B08D800F93266 /* ShoppingGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingGridCell.swift; sourceTree = "<group>"; };
 		C2811C5C257B09F100F93266 /* ShoppingGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingGridViewController.swift; sourceTree = "<group>"; };
 		C2AFB431257B50D000514A2C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		C2DA722F25850DFA003894AB /* shopping.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shopping.json; sourceTree = "<group>"; };
 		CF052C9E38E8A1C3D80F5107 /* Pods-HappyRapidCart-HappyRapidCartUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart-HappyRapidCartUITests.release.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart-HappyRapidCartUITests/Pods-HappyRapidCart-HappyRapidCartUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E9D6752235EE300D2984A747 /* Pods-HappyRapidCart.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart.debug.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart/Pods-HappyRapidCart.debug.xcconfig"; sourceTree = "<group>"; };
 		EA80A3A28E4EF2F80C3DE07D /* Pods-HappyRapidCartTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCartTests.release.xcconfig"; path = "Target Support Files/Pods-HappyRapidCartTests/Pods-HappyRapidCartTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		0A91A64D2562210400FBA013 /* HappyRapidCart */ = {
 			isa = PBXGroup;
 			children = (
+				C2DA722F25850DFA003894AB /* shopping.json */,
 				0A91A64E2562210400FBA013 /* AppDelegate.swift */,
 				0A91A6502562210400FBA013 /* SceneDelegate.swift */,
 				0A91A6542562210400FBA013 /* Main.storyboard */,
@@ -304,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A91A65B2562210A00FBA013 /* LaunchScreen.storyboard in Resources */,
+				C2DA723025850DFA003894AB /* shopping.json in Resources */,
 				0A91A6582562210A00FBA013 /* Assets.xcassets in Resources */,
 				0A91A6562562210400FBA013 /* Main.storyboard in Resources */,
 			);

@@ -6,8 +6,10 @@ target 'HappyRapidCart' do
   use_frameworks!
   pod 'Alamofire'
   pod 'AlamofireImage'
+  pod 'lottie-ios'
   # Add additional dependencies
   pod 'Parse'
+  
 
   # Pods for HappyRapidCart
 

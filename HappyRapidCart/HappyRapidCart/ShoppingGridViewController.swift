@@ -9,10 +9,14 @@ import UIKit
 import Foundation
 import AlamofireImage
 import Parse
+import Lottie
 
 class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, ProductCellDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let animatioView = AnimationView()
+    
     
     var cartImage: UIImage!
     var lableNoOfCartItem: UILabel!
@@ -26,6 +30,8 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAnimation()
+        
         collectionView.delegate = self
         collectionView.dataSource = self
 
@@ -80,6 +86,31 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
         })
 
         dataTask.resume()
+        
+    }
+    
+    // animation function
+    private func setupAnimation(){
+        print("##################### Animation")
+        animatioView.animation = Animation.named("shopping")
+        animatioView.frame = view.bounds
+        //animatioView.backgroundColor = .green
+        animatioView.contentMode = .scaleAspectFit
+        animatioView.loopMode = .playOnce
+        view.addSubview(animatioView)
+        //animatioView.play()
+        animatioView.play(
+            fromProgress: animatioView.currentProgress,
+            toProgress: 1,
+            loopMode: .playOnce,
+            completion: { [weak self] completed in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                    self!.animatioView.removeFromSuperview()
+                }
+            }
+        )
+        //animatioView.removeFromSuperview()
+        
         
     }
     
