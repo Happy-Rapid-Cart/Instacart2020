@@ -24,7 +24,7 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     
     var products = [[String:Any]]()
     //var productsToBuy = [[String:Any]]()
-    var searchBarVariable = "oranges"
+    var searchBarVariable = "Cookies"
     var clickedProduct: IndexPath? = nil
     
     
@@ -92,7 +92,7 @@ class ShoppingGridViewController: UIViewController, UICollectionViewDelegate, UI
     // animation function
     private func setupAnimation(){
         print("##################### Animation")
-        animatioView.animation = Animation.named("shopping")
+        animatioView.animation = Animation.named("loadingFood")
         animatioView.frame = view.bounds
         //animatioView.backgroundColor = .green
         animatioView.contentMode = .scaleAspectFit

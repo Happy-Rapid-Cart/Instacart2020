@@ -8,23 +8,48 @@
 import UIKit
 import Parse
 import AlamofireImage
+import Lottie
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     
-    
+    let animatioView = AnimationView()
     @IBOutlet weak var cartTableView: UITableView!
     var products = [PFObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupAnimation()
         cartTableView.delegate = self
         cartTableView.dataSource = self
 
         // Do any additional setup after loading the view.
     }
     
-    
+    // animation function
+    private func setupAnimation(){
+        print("##################### Animation")
+        animatioView.animation = Animation.named("shopping")
+        animatioView.frame = view.bounds
+        //animatioView.backgroundColor = .green
+        animatioView.contentMode = .scaleAspectFit
+        animatioView.loopMode = .playOnce
+        view.addSubview(animatioView)
+        //animatioView.play()
+        animatioView.play(
+            fromProgress: animatioView.currentProgress,
+            toProgress: 1,
+            loopMode: .playOnce,
+            completion: { [weak self] completed in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                    self!.animatioView.removeFromSuperview()
+                }
+            }
+        )
+        //animatioView.removeFromSuperview()
+        
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

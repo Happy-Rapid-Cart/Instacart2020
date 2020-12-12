@@ -22,6 +22,7 @@
 		74B30119C9320EC349B0F917 /* Pods_HappyRapidCartTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E99E09D39F40EA82949B9FA /* Pods_HappyRapidCartTests.framework */; };
 		931FCC66E63181B512A976D6 /* Pods_HappyRapidCart.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66790612CAC81510F9815474 /* Pods_HappyRapidCart.framework */; };
 		C206AF3D2570317000721BF1 /* StroesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C206AF3C2570317000721BF1 /* StroesViewController.swift */; };
+		C23AB16B258528C700A5E172 /* loadingFood.json in Resources */ = {isa = PBXBuildFile; fileRef = C23AB16A258528C600A5E172 /* loadingFood.json */; };
 		C25994E9257027B4008F35E6 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25994E8257027B4008F35E6 /* StoreCell.swift */; };
 		C2811C58257B08D800F93266 /* ShoppingGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2811C57257B08D800F93266 /* ShoppingGridCell.swift */; };
 		C2811C5D257B09F100F93266 /* ShoppingGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2811C5C257B09F100F93266 /* ShoppingGridViewController.swift */; };
@@ -72,6 +73,7 @@
 		6B0278527D82FB4CFE0CC416 /* Pods-HappyRapidCart-HappyRapidCartUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HappyRapidCart-HappyRapidCartUITests.debug.xcconfig"; path = "Target Support Files/Pods-HappyRapidCart-HappyRapidCartUITests/Pods-HappyRapidCart-HappyRapidCartUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B8B632A3E84543A76C1CFAEA /* Pods_HappyRapidCart_HappyRapidCartUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HappyRapidCart_HappyRapidCartUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C206AF3C2570317000721BF1 /* StroesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StroesViewController.swift; sourceTree = "<group>"; };
+		C23AB16A258528C600A5E172 /* loadingFood.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingFood.json; sourceTree = "<group>"; };
 		C25994E8257027B4008F35E6 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		C2811C57257B08D800F93266 /* ShoppingGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingGridCell.swift; sourceTree = "<group>"; };
 		C2811C5C257B09F100F93266 /* ShoppingGridViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingGridViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 		0A91A64D2562210400FBA013 /* HappyRapidCart */ = {
 			isa = PBXGroup;
 			children = (
+				C23AB16A258528C600A5E172 /* loadingFood.json */,
 				C2DA722F25850DFA003894AB /* shopping.json */,
 				0A91A64E2562210400FBA013 /* AppDelegate.swift */,
 				0A91A6502562210400FBA013 /* SceneDelegate.swift */,
@@ -143,13 +146,13 @@
 				C2AFB431257B50D000514A2C /* SearchBarView.swift */,
 				C2811C57257B08D800F93266 /* ShoppingGridCell.swift */,
 				C2811C5C257B09F100F93266 /* ShoppingGridViewController.swift */,
+				0A7D6C12257C952B0083A407 /* CartViewController.swift */,
 				C25994E8257027B4008F35E6 /* StoreCell.swift */,
 				C206AF3C2570317000721BF1 /* StroesViewController.swift */,
 				0A91A6572562210A00FBA013 /* Assets.xcassets */,
 				0A91A6592562210A00FBA013 /* LaunchScreen.storyboard */,
 				0A91A65C2562210A00FBA013 /* Info.plist */,
 				0A91A69625622CB600FBA013 /* LoginViewController.swift */,
-				0A7D6C12257C952B0083A407 /* CartViewController.swift */,
 				0A7D6C17257C98490083A407 /* CartCell.swift */,
 				0A1E6FCB2581EF5100BDD62E /* Supermarket.swift */,
 			);
@@ -307,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A91A65B2562210A00FBA013 /* LaunchScreen.storyboard in Resources */,
+				C23AB16B258528C700A5E172 /* loadingFood.json in Resources */,
 				C2DA723025850DFA003894AB /* shopping.json in Resources */,
 				0A91A6582562210A00FBA013 /* Assets.xcassets in Resources */,
 				0A91A6562562210400FBA013 /* Main.storyboard in Resources */,
