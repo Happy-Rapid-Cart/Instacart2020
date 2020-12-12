@@ -217,5 +217,10 @@ Aggregates grocery store options and matches user to a store they'd like to subm
  * Walkthrough Video
  <img src='https://recordit.co/kWPeMkgBzN.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' /> 
  
+  # Sprint 3 Milestone
+ 
+ - [x] The user can view the selected products in their cart
+ - [x] Parse stores the user's produts
+ - [x] Polish the UI
  
 
