@@ -1,6 +1,6 @@
 # Happy Rapid Cart - Delivery iOS mobile app
 ![Build](https://github.com/Happy-Rapid-Cart/Instacart2020/workflows/Build/badge.svg?)
-![](https://user-images.githubusercontent.com/49815957/99154934-a07b3d80-2681-11eb-9d2c-c64aa2152f46.jpg =250x250)
+![](happy-rapid-cart.png)
 
 
 
